@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">One Way from .ts to .html</div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row">
+    Interpolation
+    <div class="col-3">
+      {{ courseName }}
+    </div>
+    <div class="col-3">
+      property Binding
+      <div [class]="classNameHtml">Danger</div>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="showAlert('Hello World')">
+        Show Alert Message
+      </button>
+      <span (click)="changeCourseName('Odoo Development')"
+        >Change Course Name</span
+      >
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="courseName"> - {{courseName}}
+
+    </div>
+  </div>
+</div>

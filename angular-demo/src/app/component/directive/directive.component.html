@@ -1,0 +1,108 @@
+<div class="container-fluid py-5 bg-dark text-center text-white">
+  <h2>Structure Directive</h2>
+</div>
+<div class="container mt-2 text-white rounded-2">
+  <div class="row">
+    <div class="col-3">
+      <div *ngIf="isDivVisible" class="bg-danger p-3 text-center">
+        <h4>Div -1</h4>
+      </div>
+    </div>
+    <div class="col-3">
+      <div *ngIf="isDiv2Visible" class="bg-danger p-3 text-center">
+        <h4>Div -2</h4>
+      </div>
+    </div>
+    <div class="col-3">
+      <div *ngIf="num1 == num2" class="bg-danger p-3 text-center">
+        <h4>Div -3</h4>
+      </div>
+    </div>
+    <div class="col-3">
+      <div *ngIf="isActive" class="bg-danger p-3 text-center">
+        <h4>Div -4</h4>
+      </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="selectedState == 'us'" class="bg-danger p-3 text-center">
+            
+           <h1>Div -5</h1>
+            
+          </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <button class="btn btn-danger" (click)="hideDiv()">Hide</button>
+      <button class="btn btn-primary mx-2" (click)="showDiv()">Show</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-succes" (click)="toggleDiv()">Toggle</button>
+    </div>
+    <div class="col-3">
+      <input type="text" [(ngModel)]="num1" />
+      <input type="text" [(ngModel)]="num2" />
+    </div>
+    <div class="col-3">
+      <input type="checkbox" name="" id="" [(ngModel)]="isActive" />
+      <select class="form-control" [(ngModel)]="selectedState">
+        <option value=""></option>
+        <option value="usa">USA</option>
+        <option value="india">India</option>
+        <option value="us">United States</option>
+    </select>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-3">
+            <ul>
+                <li *ngFor="let city of cityArray">{{city}}</li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <select >
+                <option *ngFor="let student of studentList" [value]="student.studentid">{{student.name}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5 bg-dark text-center text-white">
+    <h2>Attribute Directive</h2>
+  </div>
+  <div class="container mt-5">
+
+    <div class="row">
+        <div class="col-3" [ngClass]="div1BgColor">
+            <div class="p-3">
+                Change BackGround Color
+            </div>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-danger mx-2" (click)="addRedClass()">Red</button>
+            <button class="btn btn-primary mx-2" (click)="addBlueClass()">Blue</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3" [ngClass]="isDiv2Active ? 'bg-danger':'bg-primary'">
+            <div class="p-3">
+                Change BackGround Color
+            </div>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary mx-2" (click)="toggleColor()">Blue</button>
+        </div>
+        <div class="col-3">
+            change background by ng style
+        </div>
+        <div class="col-3" [ngStyle]="{'background-color': isDiv2Active ? 'yellow':'green'}">
+            <button class="btn btn-primary mx-2" (click)="toggleColor()">Toggle</button>
+        </div>
+    </div>
+  </div>
